@@ -4,7 +4,7 @@ import re
 while True:
     fname = input("\nPlease enter your First Name: ")
 
-    check = re.fullmatch(r"", fname)
+    check = re.fullmatch(r"[A-Z][a-z]+", fname)
 
     if check == None:
         print("Wrong format! Please try again.")
@@ -16,7 +16,7 @@ while True:
 while True:
     lname = input("\nPlease enter your Last Name: ")
     
-    check = re.fullmatch(r"", lname)
+    check = re.fullmatch(r"[A-Z][a-z]+", lname)
 
     if check == None:
         print("Wrong format! Please try again.")
@@ -28,7 +28,7 @@ while True:
 while True:
     date = input("\nPlease enter your Date of Birth (mm/dd/yyyy): ")
     
-    check = re.fullmatch(r"", date)
+    check = re.fullmatch(r"(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/(19[0-9][0-9]|200[01])", date) 
 
     if check == None:
         print("Wrong format! Please try again.")
@@ -40,7 +40,7 @@ while True:
 while True:
     email = input("\nPlease enter your Email Address: ")
     
-    check = re.fullmatch(r"", email)
+    check = re.fullmatch(r"(\w|\.)+@[a-z]+\.[a-z]{2,4}", email)  
 
     if check == None:
         print("Wrong format! Please try again.")
@@ -52,7 +52,7 @@ while True:
 while True:
     user = input("\nPlease enter your Username: ")
     
-    check = re.fullmatch(r"", user)
+    check = re.fullmatch(r"\w{6,12}", user)
 
     if check == None:
         print("Wrong format! Please try again.")
@@ -64,7 +64,7 @@ while True:
 while True:
     passw = input("\nPlease enter your Password: ")
     
-    check = re.fullmatch(r"", passw)
+    check = re.fullmatch(r"^[a-z](?=.{7,})(?=.*[A-Z])(?=.*\d)(?=.*[$&?!%])[a-zA-Z0-9$&?!%]+$", passw)
     
     if check == None:
         print("Wrong format! Please try again.")
@@ -76,7 +76,7 @@ while True:
 while True:
     ccnum = input("\nPlease enter your Credit Card Number (no spaces): ")
     
-    check = re.fullmatch(r"", ccnum)
+    check = re.fullmatch(r"^(4|5)\d{15}", ccnum)
     
     if check == None:
         print("Wrong format! Please try again.")
@@ -88,7 +88,7 @@ while True:
 while True:
     ccdat = input("\nPlease enter your Credit Card Expiration Date (mm/yy): ")
     
-    check = re.fullmatch(r"", ccdat)
+    check = re.fullmatch(r"(0[5-9]|1[0-2])/24|(0[1-9]|1[0-2])/(2[5-9]|[3-9][0-9])", ccdat)  
     
     if check == None:
         print("Wrong format! Please try again.")
@@ -100,7 +100,7 @@ while True:
 while True:
     cccvc = input("\nPlease enter your Credit Card Verification Code: ")
     
-    check = re.fullmatch(r"", cccvc)
+    check = re.fullmatch(r"\d{3}", cccvc)
     
     if check == None:
         print("Wrong format! Please try again.")
